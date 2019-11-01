@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,25 +12,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191101080800) do
-
+ActiveRecord::Schema.define(version: 20_191_101_080_800) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "analytics", force: :cascade do |t|
-    t.integer "total_request", default: 0
-    t.jsonb "detail", default: {}
-    t.integer "url_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'analytics', force: :cascade do |t|
+    t.integer 'total_request', default: 0
+    t.jsonb 'detail', default: {}
+    t.integer 'url_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "urls", force: :cascade do |t|
-    t.text "source"
-    t.text "shorten"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["shorten"], name: "index_urls_on_shorten"
+  create_table 'urls', force: :cascade do |t|
+    t.text 'source'
+    t.text 'shorten'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['shorten'], name: 'index_urls_on_shorten'
   end
-
 end
