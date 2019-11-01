@@ -1,0 +1,8 @@
+<%= content_tag(:h1, 'Analytics') %>
+<% @statistics.each do |object| %>
+  <%= content_tag(:h3, object.source) %>
+  <%= content_tag(:h4, "#{ENDPOINTS.domain}/#{object.shorten}") %>
+  <%= content_tag(:p, "Total Clicks: #{object.total_hits}") %>
+  <%= content_tag(:p, "Top Countries: #{top_countries(object.detail)}") %>
+  <%= content_tag(:hr) %>
+<% end %>

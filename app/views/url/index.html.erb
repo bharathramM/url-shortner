@@ -1,0 +1,11 @@
+
+<%= form_with(url: generate_shorten_url_path, method: "post", id: "create_shorten") do |f| %>
+  <%= content_tag(:h1, 'Welcome to short.com') %>
+  <%= content_tag(:h4, 'Please enter your URL here') %>
+  <%= f.text_field "url[source]"%>
+  <%= f.submit "Generate" %>
+<% end %>
+
+<div id="url-listing" class="hide">
+<h5> Here's your short URL! </h5>
+</div>

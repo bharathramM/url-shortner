@@ -1,0 +1,6 @@
+var displayList = document.getElementById("url-listing");
+displayList.classList.remove("hide");
+var node = document.createElement("p")
+var textnode = document.createTextNode("<%= @url.generate_shorten %>");
+node.appendChild(textnode);
+document.getElementById("url-listing").appendChild(node);
